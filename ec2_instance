@@ -1,0 +1,26 @@
+import boto3
+
+myec2 = boto3.resource(
+            service_name="ec2", 
+            region_name="ap-south-1" , 
+            aws_access_key_id="", 
+            aws_secret_access_key=""
+) 
+    def oslaunch():
+    myid = myec2.create_instances( 
+                InstanceType="t2.micro", 
+                ImageId="ami-0fd05997b4dff7aac",
+                MinCount=1,
+                MaxCount=1
+    )
+myos = oslaunch()
+myos[0].id
+myoslist.append( myos[0].id )
+myoslist
+
+def osterminate(n):
+myec2.terminate_instances(InstanceIds=[n])
+
+los = myoslist.pop()
+los
+osterminate(los)
